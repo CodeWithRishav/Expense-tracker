@@ -1,0 +1,171 @@
+/* 🌟 Reset and Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #2c3e50, #4ca1af);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+/* 🌟 Main Container */
+main {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 450px;
+}
+
+/* 🌟 Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+}
+
+header div {
+  text-align: center;
+}
+
+h5 {
+  font-size: 14px;
+  color: #eee;
+}
+
+span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* 🌟 Transactions */
+section h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 5px;
+}
+
+ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+li {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+li:hover {
+  transform: scale(1.05);
+}
+
+/* 🌟 Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+input,
+button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+}
+
+input {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+input::placeholder {
+  color: #ddd;
+}
+
+button {
+  background: linear-gradient(to right, #1e90ff, #00c3ff);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover {
+  background: linear-gradient(to right, #0072ff, #00c3ff);
+  transform: scale(1.05);
+}
+
+/* 🌟 Split Expense Button */
+#splitExpenseBtn {
+  background: linear-gradient(to right, #ff512f, #dd2476);
+}
+
+#splitExpenseBtn:hover {
+  background: linear-gradient(to right, #e52d27, #b31217);
+}
+
+/* 🌟 Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ff5f5f;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #5fff5f;
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+}

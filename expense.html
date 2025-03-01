@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="expense.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <h5>Total Balance</h5>
+          <span id="balance">₹0.00</span>
+        </div>
+        <div>
+          <h5>Income</h5>
+          <span id="income">₹0.00</span>
+        </div>
+        <div>
+          <h5>Expense</h5>
+          <span id="expense">₹0.00</span>
+        </div>
+      </header>
+
+      <section>
+        <h3>Transactions</h3>
+        <ul id="transactionList" data-placeholder="No transactions."></ul>
+      </section>
+
+      <section>
+        <h3>Add Transaction</h3>
+        <form id="transactionForm">
+          <div class="toggle-container">
+            <label class="switch">
+              <input type="checkbox" name="type" id="type" checked />
+              <span class="slider round"></span>
+            </label>
+            <span id="transactionTypeLabel">Expense</span>
+          </div>
+          <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required placeholder="Enter transaction name" />
+          </div>
+          <div>
+            <label for="amount">Amount</label>
+            <input
+              type="number"
+              name="amount"
+              min="0"
+              step="any"
+              inputmode="decimal"
+              id="amount"
+              required
+              placeholder="Enter amount"
+              onfocus="this.select()"
+            />
+          </div>
+          <div>
+            <label for="date">Date</label>
+            <input type="date" name="date" id="date" required />
+          </div>
+          <button type="submit">Add Transaction</button>
+        </form>
+      </section>
+
+      <section>
+        <h3>Split Expense</h3>
+        <button id="splitExpenseBtn">Split Expense</button>
+      </section>
+    </main>
+
+    <script src="expense.js"></script>
+  </body>
+</html>
