@@ -1,143 +1,187 @@
-/* 🌟 Reset and Styling */
+/* Reset & Base Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
-
 body {
-  background: linear-gradient(to right, #2c3e50, #4ca1af);
-  color: #fff;
+  background: #121212;
+  font-family: 'Poppins', sans-serif;
+  color: #e0e0e0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   padding: 20px;
+  min-height: 100vh;
 }
-
-/* 🌟 Main Container */
-main {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 25px;
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+.container {
   width: 100%;
-  max-width: 450px;
+  max-width: 600px;
+  background: #1f1f1f;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-/* 🌟 Header */
+/* Header – Balance Cards */
 header {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
   margin-bottom: 20px;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.15);
+}
+.balance-card {
+  flex: 1 1 45%;
+  background: #272727;
+  padding: 15px;
   border-radius: 8px;
-}
-
-header div {
   text-align: center;
+  transition: transform 0.3s ease;
 }
-
-h5 {
-  font-size: 14px;
-  color: #eee;
+.balance-card:hover {
+  transform: translateY(-3px);
 }
-
-span {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-/* 🌟 Transactions */
-section h3 {
-  font-size: 18px;
+.balance-card h4 {
+  font-size: 16px;
   margin-bottom: 8px;
-  border-bottom: 2px solid #fff;
+  color: #b0b0b0;
+}
+.balance-card p {
+  font-size: 20px;
+  font-weight: bold;
+  /* Use different colors based on the card type if desired */
+}
+
+/* Transactions Section */
+.transactions {
+  margin-bottom: 20px;
+}
+.transactions h3 {
+  margin-bottom: 10px;
+  border-bottom: 2px solid #444;
   padding-bottom: 5px;
 }
-
-ul {
+#transactionList {
   list-style: none;
-  margin-top: 10px;
+  max-height: 220px;
+  overflow-y: auto;
 }
-
-li {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 12px;
+#transactionList li {
+  background: #272727;
+  margin-bottom: 10px;
+  padding: 10px;
   border-radius: 6px;
-  margin-bottom: 8px;
-  transition: transform 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s ease;
+}
+#transactionList li:hover {
+  background: #333;
+}
+#transactionList li .transaction-info {
+  flex-grow: 1;
+}
+#transactionList li .transaction-info strong {
+  display: block;
+  font-size: 16px;
+  color: #e0e0e0;
+}
+#transactionList li .transaction-info small {
+  color: #b0b0b0;
+  font-size: 12px;
+}
+#transactionList li .transaction-amount {
+  font-weight: bold;
+  font-size: 16px;
+  margin-left: 10px;
+}
+#transactionList li .transaction-amount.income {
+  color: #4caf50;
+}
+#transactionList li .transaction-amount.expense {
+  color: #f44336;
+}
+#transactionList li .select-checkbox {
+  margin-right: 10px;
+  transform: scale(1.2);
 }
 
-li:hover {
-  transform: scale(1.05);
+/* Form Styles */
+.add-transaction,
+.split-section {
+  margin-bottom: 20px;
 }
-
-/* 🌟 Form */
+.add-transaction h3,
+.split-section h3 {
+  margin-bottom: 10px;
+  border-bottom: 2px solid #444;
+  padding-bottom: 5px;
+}
 form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 10px;
+  gap: 15px;
 }
-
-input,
-button {
-  width: 100%;
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #b0b0b0;
+}
+.form-group input {
   padding: 10px;
   border-radius: 6px;
   border: none;
+  background: #333;
+  color: #e0e0e0;
   font-size: 16px;
 }
-
-input {
-  background: rgba(255, 255, 255, 0.2);
+.form-group input::placeholder {
+  color: #777;
+}
+.btn {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(45deg, #ff5722, #ff9800);
   color: #fff;
-}
-
-input::placeholder {
-  color: #ddd;
-}
-
-button {
-  background: linear-gradient(to right, #1e90ff, #00c3ff);
-  color: white;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn:hover {
+  background: linear-gradient(45deg, #ff9800, #ff5722);
+  transform: scale(1.03);
+}
+.split-btn {
+  background: linear-gradient(45deg, #2196f3, #21cbf3);
+}
+.split-btn:hover {
+  background: linear-gradient(45deg, #21cbf3, #2196f3);
 }
 
-button:hover {
-  background: linear-gradient(to right, #0072ff, #00c3ff);
-  transform: scale(1.05);
+/* Toggle Switch for Transaction Type */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-
-/* 🌟 Split Expense Button */
-#splitExpenseBtn {
-  background: linear-gradient(to right, #ff512f, #dd2476);
-}
-
-#splitExpenseBtn:hover {
-  background: linear-gradient(to right, #e52d27, #b31217);
-}
-
-/* 🌟 Toggle Switch */
 .switch {
   position: relative;
   display: inline-block;
   width: 40px;
   height: 20px;
 }
-
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-
 .slider {
   position: absolute;
   cursor: pointer;
@@ -145,11 +189,10 @@ button:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ff5f5f;
+  background-color: #f44336;
   transition: 0.4s;
   border-radius: 20px;
 }
-
 .slider:before {
   position: absolute;
   content: "";
@@ -157,15 +200,23 @@ button:hover {
   width: 14px;
   left: 3px;
   bottom: 3px;
-  background-color: white;
+  background-color: #fff;
   transition: 0.4s;
   border-radius: 50%;
 }
-
 input:checked + .slider {
-  background-color: #5fff5f;
+  background-color: #4caf50;
+}
+input:checked + .slider:before {
+  transform: translateX(20px);
 }
 
-input:checked + .slider:before {
-  transform: translateX(18px);
+/* Responsive Design */
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+  }
+  .balance-card {
+    flex: 1 1 100%;
+  }
 }
